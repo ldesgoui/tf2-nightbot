@@ -1,5 +1,13 @@
 # TF2-related Nightbot commands
 
+## Usage
+
+After [Nightbot has joined your room](https://beta.nightbot.tv/), simply call addcom/editcom to add the commands.
+
+```
+!addcom !logs $(eval ... )
+```
+
 Read the last few lines of each command to see where your custom identifiers should be placed.
 
 ## Get the 5 latest Logs.tf
