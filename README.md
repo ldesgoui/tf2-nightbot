@@ -53,16 +53,3 @@ $(eval (function(api) {
 ))
 ```
 (replace 22474 with your team's ID, the number at the end of etf2l.org/teams/XXXX)
-
-
-## Latest [Youtube](https://developers.google.com/youtube/v3/docs/playlistId) video
-`"Content Creation, Twitch, and Youtube" youtu.be/385S6DLBUMA`
-```javascript
-$(eval (function(api) {
-  v=api.items[0].snippet;
-  return `"${v.title}" youtu.be/${v.resourceId.videoId}`;
-})(
-  $(urlfetch https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&key=AIzaSyDp4vrYM5WwEK7TNYSnZbBh-T5GTGhLF0U&playlistId=UUmmQrrMlWhKx46f1jG_6AZQ)
-))
-```
-(replace UUmmQrrMlWhKx46f1jG_6AZQ with: [your Youtube Channel ID](https://www.youtube.com/account_advanced) and replacing the initial "UC" with "UU")
