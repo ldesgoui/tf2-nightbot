@@ -27,7 +27,7 @@ $(eval (function(api) {
 (replace 76561198020242938 with your 64 bit steamid (steamid.io))
 
 
-## Get map of server played on
+## Get map currently played on
 Doesn't work if you're offline or private on Steam
 ```javascript
 $(eval (function(api) {
