@@ -27,6 +27,19 @@ $(eval (function(api) {
 (replace 76561198020242938 with your 64 bit steamid (steamid.io))
 
 
+## Get map of server played on
+Doesn't work if you're offline or private on Steam
+```javascript
+$(eval (function(api) {
+  if (api.map === undefined) { return "Map not found"; }
+  return api.map;
+})(
+  $(urlfetch json https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
+))
+```
+(replace twiikuu with your [customURL](https://steamid.io))
+
+
 ## Next [ETF2L](http://api.etf2l.org/#Team) official
 `Week 6, unexpected vs Se7en on cp_snakewater_final1, cp_granary_pro_rc4 will be played on Sun, 02 Jul 2017 19:15:00 GMT`
 ```javascript
