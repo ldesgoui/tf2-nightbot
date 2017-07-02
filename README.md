@@ -21,7 +21,7 @@ $(eval (function(api) {
   var hmnz = (ts)=>[1,60,3600,86400,604800,2419200,29030400].reduce((a,x,i)=>ts<x?a:`${ts/x|0} ${["second","minute","hour","day","week","month","year"][i]}${(ts/x|0)>1?"s":""}`,"less than a second");
   return api.logs.map((x) => `logs.tf/${x.id} (${hmnz(new Date()/1000 - x.date)} ago)`).join(" | ");
 })(
-  $(urlfetch json http://logs.tf/json_search?limit=5&player=76561198020242938)
+  $(urlfetch http://logs.tf/json_search?limit=5&player=76561198020242938)
 ))
 ```
 (replace 76561198020242938 with your 64 bit steamid (steamid.io))
@@ -34,7 +34,7 @@ $(eval (function(api) {
   if (api.map === undefined) { return "Map not found"; }
   return api.map;
 })(
-  $(urlfetch json https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
+  $(urlfetch https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
 ))
 ```
 (replace twiikuu with your [customURL](https://steamid.io))
@@ -49,7 +49,7 @@ $(eval (function(api) {
   var m = api.matches[0];
   return `Week ${m.week}, ${m.clan1.name} vs ${m.clan2.name} on ${m.maps.join(', ')} will be played on ${new Date(m.time * 1000).toGMTString()}`;
 })(
-  $(urlfetch json http://api.etf2l.org/team/22474/matches.json)
+  $(urlfetch http://api.etf2l.org/team/22474/matches.json)
 ))
 ```
 (replace 22474 with your team's ID, the number at the end of etf2l.org/teams/XXXX)
@@ -62,7 +62,7 @@ $(eval (function(api) {
   v=api.items[0].snippet;
   return `"${v.title}" youtu.be/${v.resourceId.videoId}`;
 })(
-  $(urlfetch json https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&key=AIzaSyDp4vrYM5WwEK7TNYSnZbBh-T5GTGhLF0U&playlistId=UUmmQrrMlWhKx46f1jG_6AZQ)
+  $(urlfetch https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&key=AIzaSyDp4vrYM5WwEK7TNYSnZbBh-T5GTGhLF0U&playlistId=UUmmQrrMlWhKx46f1jG_6AZQ)
 ))
 ```
 (replace UUmmQrrMlWhKx46f1jG_6AZQ with: [your Youtube Channel ID](https://www.youtube.com/account_advanced) and replacing the initial "UC" with "UU")
