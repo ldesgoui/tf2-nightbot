@@ -31,8 +31,7 @@ $(eval (function(api) {
 Doesn't work if you're offline or private on Steam
 ```javascript
 $(eval (function(api) {
-  if (api.map === undefined) { return "Map not found"; }
-  return api.map;
+  return (api.map === undefined ? "Map not found" : api.map);
 })(
   $(urlfetch https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
 ))
