@@ -1,5 +1,7 @@
 # TF2-related Nightbot commands
 
+### It seems none of these work anymore, sorry gang.
+
 Nightbot only allows commands to be 500 characters at most and urlfetch to receive 400 characters at most, if the commands fail in an unfamiliar fashion, it might be caused by either of these.
 
 ## Usage
