@@ -1,8 +1,6 @@
 # TF2-related Nightbot commands
 
-### It seems none of these work anymore, sorry gang.
-
-Nightbot only allows commands to be 500 characters at most and urlfetch to receive 400 characters at most, if the commands fail in an unfamiliar fashion, it might be caused by either of these.
+I fixed them PogU
 
 ## Usage
 
@@ -23,7 +21,7 @@ $(eval (function(api) {
   var hmnz = (ts)=>[1,60,3600,86400,604800,2419200,29030400].reduce((a,x,i)=>ts<x?a:`${ts/x|0} ${["second","minute","hour","day","week","month","year"][i]}${(ts/x|0)>1?"s":""}`,"less than a second");
   return api.logs.map((x) => `logs.tf/${x.id} (${hmnz(new Date()/1000 - x.date)} ago)`).join(" | ");
 })(
-  $(urlfetch http://logs.tf/json_search?limit=3&player=76561198020242938)
+  $(urlfetch json http://logs.tf/json_search?limit=3&player=76561198020242938)
 ))
 ```
 (replace 76561198020242938 with your 64 bit steamid (steamid.io))
@@ -31,11 +29,13 @@ $(eval (function(api) {
 
 ## Get map currently played on
 Doesn't work if you're offline or private on Steam
+2019 update: broken by steam, i think
+
 ```javascript
 $(eval (function(api) {
   return (api.map === undefined ? "Map not found" : api.map);
 })(
-  $(urlfetch https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
+  $(urlfetch json https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
 ))
 ```
 (replace twiikuu with your [customURL](https://steamid.io))
@@ -50,7 +50,7 @@ $(eval (function(api) {
   var m = api.matches[0];
   return `Week ${m.week}, ${m.clan1.name} vs ${m.clan2.name} on ${m.maps.join(', ')} will be played on ${new Date(m.time * 1000).toGMTString()}`;
 })(
-  $(urlfetch http://api.etf2l.org/team/22474/matches.json)
+  $(urlfetch json http://api.etf2l.org/team/22474/matches.json)
 ))
 ```
 (replace 22474 with your team's ID, the number at the end of etf2l.org/teams/XXXX)
