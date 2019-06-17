@@ -53,3 +53,9 @@ Doesn't work if you're offline or private on Steam
 ))
 ```
 (replace 22474 with your team's ID, the number at the end of etf2l.org/teams/XXXX)
+
+## Random TF2 Tip (from the loading screen)
+
+```javascript
+!addcom !tip $(urlfetch https://tf2-tips.ldesgoui.workers.dev)
+```
