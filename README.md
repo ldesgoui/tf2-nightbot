@@ -13,7 +13,14 @@ After [Nightbot has joined your room](https://beta.nightbot.tv/), simply call ad
 Read the last few lines of each command to see where your custom identifiers should be placed.
 
 
-## Get the 3 latest logs from [logs.tf](http://logs.tf/about#json)
+## Get the 5 latest logs from [logs.tf](http://logs.tf/about#json)
+
+```javascript
+!addcom !tip $(urlfetch https://logs.ldesgoui.workers.dev?player=76561197996833775)
+```
+
+### OR
+
 `logs.tf/1765763 (7 hours ago) | logs.tf/1765710 (8 hours ago) | logs.tf/1765651 (9 hours ago)`
 ```javascript
 !addcom !logs $(eval (function(api) {
