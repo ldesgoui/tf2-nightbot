@@ -1,7 +1,5 @@
 # TF2-related Nightbot commands
 
-I fixed them PogU
-
 ## Usage
 
 After [Nightbot has joined your room](https://beta.nightbot.tv/), simply call addcom/editcom to add the commands.
@@ -34,20 +32,8 @@ Read the last few lines of each command to see where your custom identifiers sho
 (replace 76561198020242938 with your 64 bit steamid (steamid.io))
 
 
-## Get map currently played on
-Doesn't work if you're offline or private on Steam
-
-```javascript
-!addcom !map $(eval (function(api) {
-  return (api.map === undefined ? "Map not found" : api.map);
-})(
-  $(urlfetch json https://us-central1-tf2-nightbot.cloudfunctions.net/ssq?host=$(steam twiikuu "{{gameServer}}"))
-))
-```
-(replace twiikuu with your [customURL](https://steamid.io))
-
-
 ## Next [ETF2L](http://api.etf2l.org/#Team) official
+
 `Week 6, unexpected vs Se7en on cp_snakewater_final1, cp_granary_pro_rc4 will be played on Sun, 02 Jul 2017 19:15:00 GMT`
 ```javascript
 !addcom !offi $(eval (function(api) {
