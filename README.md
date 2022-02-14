@@ -14,7 +14,7 @@ Read the last few lines of each command to see where your custom identifiers sho
 ## Get the 5 latest logs from [logs.tf](http://logs.tf/about#json)
 
 ```javascript
-!addcom !tip $(urlfetch https://logs.ldesgoui.workers.dev?player=76561197996833775)
+!addcom !logs $(urlfetch https://logs.ldesgoui.workers.dev?player=76561197996833775)
 ```
 
 ### OR
